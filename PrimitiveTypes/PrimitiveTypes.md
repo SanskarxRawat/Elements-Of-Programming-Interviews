@@ -1,4 +1,4 @@
-### List of DSA Problems
+### List of Primitive Type Problems
 
 1. **Computing the parity of a word**
 2. **Swap bits**

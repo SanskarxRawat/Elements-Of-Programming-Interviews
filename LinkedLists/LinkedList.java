@@ -6,6 +6,11 @@ public class LinkedList<T> {
         this.data=data;
     }
 
+    public LinkedList(T data,LinkedList<T> next){
+        this.data=data;
+        this.next=next;
+    }
+
     public LinkedList<T> search(LinkedList<T> list, T key){
         while(list!=null && list.data!=key){
             list=list.next;
@@ -88,5 +93,21 @@ public class LinkedList<T> {
             current = current.next;
         }
         System.out.println("null");
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
+    }
+
+    public LinkedList<T> getNext() {
+        return next;
+    }
+
+    public void setNext(LinkedList<T> next) {
+        this.next = next;
     }
 }

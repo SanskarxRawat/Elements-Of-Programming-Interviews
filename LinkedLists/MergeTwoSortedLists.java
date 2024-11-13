@@ -27,4 +27,42 @@ public class MergeTwoSortedLists {
         current.setNext(p1!=null?p1:p2);
         return dummyHead.getNext();
     }
+
+    public static DoublyLinkedList<Integer> mergeTwoSortedLists(DoublyLinkedList<Integer> l1, DoublyLinkedList<Integer> l2) {
+        DoublyLinkedList<Integer> dummyHead = new DoublyLinkedList<>(0);
+        DoublyLinkedList<Integer> current = dummyHead;
+
+        DoublyLinkedList<Integer> p1 = l1;
+        DoublyLinkedList<Integer> p2 = l2;
+
+        while (p1 != null && p2 != null) {
+            if (p1.getData() < p2.getData()) {
+                current.setNext(p1);
+                p1.setPrev(current);
+                p1 = p1.getNext();
+            } else {
+                current.setNext(p2);
+                p2.setPrev(current);
+                p2 = p2.getNext();
+            }
+            current = current.getNext();
+        }
+
+        if (p1 != null) {
+            current.setNext(p1);
+            p1.setPrev(current);
+        } else if (p2 != null) {
+            current.setNext(p2);
+            p2.setPrev(current);
+        }
+
+        // Return the merged list, skipping the dummy head
+        DoublyLinkedList<Integer> mergedHead = dummyHead.getNext();
+        if (mergedHead != null) {
+            mergedHead.setPrev(null);
+        }
+
+        return mergedHead;
+    }
+
 }

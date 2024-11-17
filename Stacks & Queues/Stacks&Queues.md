@@ -3,7 +3,7 @@
 1. **Implement a Stack with Max API**
 2. **Evaluate RPN Expressions**
 3. **Test a String for Well-Formedness**
-4. **Normalize Pathnames**
+4. **Normalize Path names**
 5. **Search a Postings List**
 6. **Compute Buildings with a Sunset View**
 7. **Compute Binary Tree Nodes in Order of Increasing Depth**

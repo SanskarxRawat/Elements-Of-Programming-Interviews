@@ -6,6 +6,9 @@
       <sourceFolder url="file://$MODULE_DIR$/Arrays" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/PrimitiveTypes" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Strings" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/LinkedLists" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Binary Trees" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Stacks &amp; Queues" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

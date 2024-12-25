@@ -33,10 +33,4 @@ public class ComputeThresholdSalary {
         }
         return -1.0;
     }
-
-    public static void main(String[] args) {
-        double[] salaries = {90, 30, 100, 40, 20};
-        double targetPayroll = 210;
-        System.out.println(findSalaryCap(salaries, targetPayroll));
-    }
 }

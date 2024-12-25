@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class MergingIntervals {
 
     /**
@@ -7,5 +10,36 @@ public class MergingIntervals {
      * should be expressed as a union of disjoint intervals sorted by left endpoint.
      */
 
+    /**
+     * Time complexity: O(n)
+     * Space complexity: O(1)
+     */
+
+    private static class Interval {
+        int left, right;
+
+        public Interval(int left, int right) {
+            this.left = left;
+            this.right = right;
+        }
+    }
+
+    public static List<Interval> addInterval(List<Interval> disjointIntervals, Interval newInterval) {
+        List<Interval> result = new ArrayList<>();
+        int i = 0;
+        while (i < disjointIntervals.size() && newInterval.left > disjointIntervals.get(i).right) {
+            result.add(disjointIntervals.get(i++));
+        }
+
+        while (i < disjointIntervals.size() && newInterval.right >= disjointIntervals.get(i).left) {
+            newInterval = new Interval(Math.min(newInterval.left, disjointIntervals.get(i).left),
+                    Math.max(newInterval.right, disjointIntervals.get(i).right));
+            i++;
+        }
+        result.add(newInterval);
+
+        result.addAll(disjointIntervals.subList(i, disjointIntervals.size()));
+        return result;
+    }
 
 }

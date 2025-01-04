@@ -1,7 +1,7 @@
 ### List of Recursion Problems
 
 1. **The Towers of Hanoi Problem**
-2. **Generate All Nonattacking Placements of n-Queens**
+2. **Generate All Non-Attacking Placements of n-Queens**
 3. **Generate Permutations**
 4. **Generate the Power Set**
 5. **Generate All Subsets of Size k**

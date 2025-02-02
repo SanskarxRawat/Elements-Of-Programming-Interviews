@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class LongestNonDecreasingSubsequence {
 
@@ -52,9 +54,46 @@ public class LongestNonDecreasingSubsequence {
         return Arrays.stream(dp).max().orElse(1); // Return the maximum value in dp array
     }
 
-    public static void main(String[] args) {
-        int[] nums = {10, 22, 9, 33, 21, 50, 41, 60};
-        int longestNonDecreasingSubsequence = longestNonDecreasingSubsequence(nums);
-        System.out.println("The length of the longest nondecreasing subsequence is: " + longestNonDecreasingSubsequence);
+    /**
+     *  Optimized Approach: O(n*logn(n))
+     * Binary Search Approach
+     */
+
+
+    public static int lengthOfLNDS(int[] nums) {
+        // Temp array to store the smallest elements of subsequence
+        List<Integer> temp = new ArrayList<>();
+
+        for (int num : nums) {
+            // Use binary search to find the position to replace or expand
+            int pos = binarySearch(temp, num);
+
+            if (pos == temp.size()) {
+                // If num >= all elements, append it to the subsequence
+                temp.add(num);
+            } else {
+                // Replace the element at the position to maintain optimality
+                temp.set(pos, num);
+            }
+        }
+
+        return temp.size(); // Length of temp is the LNDS length
+    }
+
+    private static int binarySearch(List<Integer> temp, int x) {
+        int low = 0, high = temp.size();
+
+        // Standard binary search to find the insertion position
+        while (low < high) {
+            int mid = low + (high - low) / 2;
+
+            if (temp.get(mid) <= x) {
+                low = mid + 1; // Move to the right half
+            } else {
+                high = mid;    // Move to the left half
+            }
+        }
+
+        return low;
     }
 }

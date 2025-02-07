@@ -3,7 +3,16 @@ public class ComputeKthElementIn2DArray {
     /**
      * Time Complexity: O(c) c is outer circular rings with respect to k
      * Space Complexity: O(1)
-     *
+     * <p>
+     * Intuition:
+     * - The problem is approached as a layer-by-layer traversal of a 2D array in a spiral order.
+     * - For any given element `k`, it may either belong to the outermost layer or a deeper, inner layer.
+     * - We check `k` sequentially for each segment of the current spiral layer (top row, right column,
+     * bottom row, and left column). If `k` is found within the bounds of the layer, we compute
+     * its position directly.
+     * - If `k` is not in the current layer, we use recursion to process the next inner layer.
+     * - The recursive call reduces the problem to a smaller sub-matrix by slicing off the outer layer
+     * and decrementing `k` by the number of elements in the removed layer.
      */
     static int findK(int A[][], int i, int j, int n, int m, int k) {
         if (n < 1 || m < 1)

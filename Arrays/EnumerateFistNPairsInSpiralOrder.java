@@ -3,7 +3,22 @@ import java.util.List;
 
 public class EnumerateFistNPairsInSpiralOrder {
 
-    // Variant 2: Enumerate the first n pairs of integers in spiral order
+
+    /**
+     * Intuition:
+     * - Begin at the origin (0, 0) and move in a spiral pattern.
+     * - Use a direction matrix (SHIFT) to facilitate movement in the right direction:
+     * right, up, left, and down.
+     * - For each step, calculate the next coordinates.
+     * - Check if the next coordinates have already been visited to prevent revisiting.
+     * - If a conflict is detected (coordinates already visited), change the direction by rotating clockwise.
+     * - Continue this process until `n` pairs are enumerated in the spiral order.
+     * <p>
+     * Time Complexity: O(n^2) for conflict checking due to the use of `anyMatch` on the result list.
+     * Space Complexity: O(n) to store the resulting pairs.
+     *
+     * Variant 2: Enumerate the first n pairs of integers in spiral order
+     */
     public static List<int[]> enumerateSpiralPairs(int n) {
         List<int[]> result = new ArrayList<>();
         int x = 0, y = 0, dir = 0;

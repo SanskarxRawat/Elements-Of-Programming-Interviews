@@ -3,6 +3,17 @@ public class PermuteElementFollowingGivenOrder {
     /**
      * Time Complexity: O(n)
      * Space Complexity: O(1)
+     *
+     * Intuition:
+     * - The problem is addressed by following cycles in the permutation array P, where each cycle
+     *   represents a group of indices that should be rearranged amongst themselves.
+     * - We iterate through each index of the input array A, and for each unprocessed index (indicated
+     *   by non-negative value in P), perform swaps to place the elements in their correct positions
+     *   as defined by P.
+     * - To ensure indices are not revisited during the cycle traversal, we subtract `n` (array size)
+     *   from the values in P, effectively marking them as visited.
+     * - By using the input array P to store these markers, we eliminate the need for extra space,
+     *   making the algorithm very efficient in terms of space.
      */
     static void permute(int A[], int P[], int n) {
         // For each element of P
@@ -32,6 +43,4 @@ public class PermuteElementFollowingGivenOrder {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
-        return arr;
-    }
 }

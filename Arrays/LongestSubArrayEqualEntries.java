@@ -1,6 +1,16 @@
 public class LongestSubArrayEqualEntries {
 
     /**
+     * This method finds the length of the longest subarray with consecutive equal entries.
+     *
+     * Intuition:
+     * - Traverse the array while maintaining two variables: `maxLength` and `currentLength`.
+     * - `currentLength` keeps track of the length of the current sequence of equal entries.
+     * - If the current element (`arr[i]`) is equal to the previous one (`arr[i-1]`), increment `currentLength`.
+     * - Otherwise, reset `currentLength` to 1 to start counting a new sequence.
+     * - Continuously update `maxLength` to hold the maximum value of `currentLength` encountered so far.
+     * - Return `maxLength` at the end, which represents the longest sequence of consecutive equal entries.
+     *
      * Time Complexity: O(n)
      * Space Complexity: O(1)
      */

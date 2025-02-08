@@ -4,6 +4,13 @@ public class Rotate2DMatrix90 {
 
 
     /**
+     * Intuition:
+     * - The rotation of a 2D matrix by 90 degrees clockwise can be done by moving elements in groups of four.
+     * - Each layer of the matrix (outermost to innermost) is rotated independently.
+     * - For a given layer, elements from four edges are moved in a circular manner.
+     *   For example: Top -> Right -> Bottom -> Left -> Top.
+     * - By iterating over each layer and swapping elements in groups of four, we achieve the desired rotation.
+     *
      * Time Complexity: O(n^2)
      * Space Complexity: O(1)
      *

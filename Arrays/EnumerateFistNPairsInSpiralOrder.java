@@ -13,7 +13,7 @@ public class EnumerateFistNPairsInSpiralOrder {
      * - Check if the next coordinates have already been visited to prevent revisiting.
      * - If a conflict is detected (coordinates already visited), change the direction by rotating clockwise.
      * - Continue this process until `n` pairs are enumerated in the spiral order.
-     * <p>
+     *
      * Time Complexity: O(n^2) for conflict checking due to the use of `anyMatch` on the result list.
      * Space Complexity: O(n) to store the resulting pairs.
      *

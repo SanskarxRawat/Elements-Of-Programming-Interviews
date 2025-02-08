@@ -1,6 +1,14 @@
 public class InversePermutationArray {
 
     /**
+     * Intuition:
+     * - The idea is to encode both the original value and the new value into a single array cell.
+     * - This is achieved by adding the new value (calculated as A[A[i]]) multiplied by 'n' (array size)
+     * to the current value of A[i]. Using modulo operation ensures we access the original value
+     * without it being overwritten.
+     * - In the second loop, we decode the new value by dividing the updated A[i] by 'n', effectively
+     * retrieving the new value and completing the inversion process in-place.
+     * <p>
      * Time Complexity: O(n)
      * Space Complexity: O(1)
      */

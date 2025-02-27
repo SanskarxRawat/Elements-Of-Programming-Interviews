@@ -13,6 +13,9 @@ public class AddBinaryString {
      *
      * Time complexity: O(max(N, M)) - N and M are the lengths of the binary strings.
      * Auxiliary space: O(max(N, M))
+     *
+     *
+     * @param x the first binary string
      */
 
     public static String addBinary(String x, String y) {
